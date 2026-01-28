@@ -2,14 +2,16 @@
     "version": 2,
     "builds": [
         {
-            "src": "dist/index.js",
+            "src": "vercel-server.js",
             "use": "@vercel/node",
             "config": {
                 "includeFiles": [
-                    "dist/**",
                     "package.json",
-                    "favicon.ico",
-                    "public/**"
+                    "config/**",
+                    "src/**",
+                    "database/**",
+                    "public/**",
+                    "dist/**"
                 ]
             }
         }
@@ -17,7 +19,10 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/dist/index.js"
+            "dest": "/vercel-server.js"
         }
-    ]
+    ],
+    "env": {
+        "NODE_OPTIONS": "--max_old_space_size=1024"
+    }
 }
