@@ -10,6 +10,21 @@
             "destination": "/api/index.js"
         }
     ],
+    "functions": {
+        "api/index.js": {
+            "memory": 1024,
+            "maxDuration": 30,
+            "includeFiles": [
+                "node_modules/@strapi/**",
+                "package.json",
+                "dist/**",
+                "config/**",
+                "database/**",
+                "public/**",
+                "src/**"
+            ]
+        }
+    },
     "env": {
         "NODE_OPTIONS": "--max_old_space_size=1024"
     }
