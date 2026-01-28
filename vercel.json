@@ -1,25 +1,13 @@
 {
     "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "vercel-server.js",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "package.json",
-                    "config/**",
-                    "src/**",
-                    "database/**",
-                    "public/**",
-                    "dist/**"
-                ]
-            }
-        }
-    ],
-    "routes": [
+            "source": "/uploads/(.*)",
+            "destination": "/uploads/$1"
+        },
         {
-            "src": "/(.*)",
-            "dest": "/vercel-server.js"
+            "source": "/(.*)",
+            "destination": "/api/index.js"
         }
     ],
     "env": {
