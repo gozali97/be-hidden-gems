@@ -13,16 +13,8 @@
     "functions": {
         "api/index.js": {
             "memory": 1024,
-            "maxDuration": 30,
-            "includeFiles": [
-                "node_modules/@strapi/**",
-                "package.json",
-                "dist/**",
-                "config/**",
-                "database/**",
-                "public/**",
-                "src/**"
-            ]
+            "maxDuration": 60,
+            "includeFiles": "node_modules/**"
         }
     },
     "env": {
